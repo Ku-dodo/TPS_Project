@@ -103,8 +103,8 @@ public class PlayerInputController : MonoBehaviour
     public void GroundCheck()
     {
         RaycastHit hitInfo;
-        Physics.Raycast(new Vector3(transform.position.x, transform.position.y + 0.5f), Vector3.down, out hitInfo, 0.7f);
-        Debug.DrawRay(new Vector3(transform.position.x, transform.position.y + 0.5f), Vector3.down, Color.red);
+        Physics.Raycast(new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Vector3.down, out hitInfo, 0.7f);
+        Debug.DrawRay(new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z), Vector3.down, Color.red);
         if (hitInfo.collider != null)
         {
             _OnGround = _groundLayer.value == (_groundLayer.value | (1 << hitInfo.collider.gameObject.layer));
@@ -113,13 +113,10 @@ public class PlayerInputController : MonoBehaviour
         {
             _OnGround = false;
         }
-        Debug.Log(_OnGround);
     }
-
 
     public void InputJump(InputAction.CallbackContext context)
     {
-        Debug.Log("HG");
         if (context.phase == InputActionPhase.Started && _OnGround)
         {
             _rb.velocity = new Vector3(_rb.velocity.x, 0f, _rb.velocity.z);
