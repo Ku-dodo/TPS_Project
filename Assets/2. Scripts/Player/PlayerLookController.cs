@@ -17,6 +17,11 @@ public class PlayerLookController : MonoBehaviour
 
     private Vector2 _mouseDelta;
 
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     private void Update()
     {
         RotatePlayerObj();

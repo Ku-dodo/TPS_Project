@@ -6,7 +6,6 @@ public class PlayerAnimHandler : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
         _animator = GetComponent<Animator>();
     }
 
@@ -25,9 +24,9 @@ public class PlayerAnimHandler : MonoBehaviour
         _animator.SetFloat("dirZ", localVelocity.z);
     }
 
-    public void SetJump(bool _bool)
+    public void SetJump()
     {
-        _animator.SetBool("IsJump", _bool);
+        _animator.SetTrigger("OnJump");
     }
 
     public void SetADSMode(bool _bool)

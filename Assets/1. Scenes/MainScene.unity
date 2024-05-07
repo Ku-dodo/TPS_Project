@@ -6317,9 +6317,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4048567274370479584}
   serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 10
-  m_AngularDrag: 0.05
+  m_Mass: 40
+  m_Drag: 0
+  m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -6363,11 +6363,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f496be8937db354478874bb05a9271c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _SprintSpeed: 1.2
-  _WalkSpeed: 0.5
-  _JumpForce: 1
+  _walkSpeed: 20
+  _maxWalkSpeed: 2
+  _sprintSpeed: 50
+  _maxSprintSpeed: 5
+  _jumpForce: 120
+  _groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
   _character: {fileID: 724701078}
   _OnADS: 0
+  _OnGround: 0
 --- !u!114 &7315141037831370021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7125,8 +7131,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 631219362}
-  - {fileID: 2070629270}
   - {fileID: 496441042}
   - {fileID: 2091876111}
   - {fileID: 3703285801374707546}
   - {fileID: 1069881276}
+  - {fileID: 2070629270}
